@@ -38,21 +38,21 @@ public class VaultHelperModule extends ToggleableModule {
 	ColorSetting normal = new ColorSetting("normal", "Color of active vaults", Color.ORANGE.getRGB());
 	BooleanSetting fillNormal = new BooleanSetting("fillNormal", false);
 	BooleanSetting outlineNormal = new BooleanSetting("outlineNormal", false);
-	BooleanSetting tracersNormal = new BooleanSetting("tracersNormal", true);
+	//BooleanSetting tracersNormal = new BooleanSetting("tracersNormal", true);
 
 	BooleanSetting showOminous = new BooleanSetting("showOminous", "Show ominous vaults", true);
 	ColorSetting ominous = new ColorSetting("ominous", "Color of ominous vaults", Color.YELLOW.getRGB());
 	BooleanSetting fillOminous = new BooleanSetting("fillLooted", false);
 	BooleanSetting outlineOminous = new BooleanSetting("outlineLooted", false);
-	BooleanSetting tracersOminous = new BooleanSetting("tracersOminous", true);
+	//BooleanSetting tracersOminous = new BooleanSetting("tracersOminous", true);
 
 
 	public VaultHelperModule() {
 		super("Vault Helper", "Helps looting vaults", ModuleCategory.CLIENT);
 
 
-		showNormal.addSubSettings(normal, fillNormal, outlineNormal, tracersNormal);
-		showOminous.addSubSettings(ominous, fillOminous, outlineOminous, tracersOminous);
+		showNormal.addSubSettings(normal, fillNormal, outlineNormal);
+		showOminous.addSubSettings(ominous, fillOminous, outlineOminous);
 
 		this.registerSettings(showNormal, showOminous, sound);
 	}
@@ -107,16 +107,16 @@ public class VaultHelperModule extends ToggleableModule {
 
 		for (BlockPos normalVault : normalVaults) {
 			renderer.drawBox(normalVault, fillNormal.getValue(), outlineNormal.getValue(), normalColor);
-			if (tracersNormal.getValue()) {
+			//if (tracersNormal.getValue()) {
 				//renderer.drawLine(mc.cameraEntity.getEyePosition(), normalVault.getCenter(), normalColor);
-			}
+			//}
 		}
 
 		for (BlockPos ominousVault : ominousVaults) {
 			renderer.drawBox(ominousVault, fillOminous.getValue(), outlineOminous.getValue(), ominousColor);
-			if (tracersOminous.getValue()) {
+			//if (tracersOminous.getValue()) {
 				//renderer.drawLine(mc.cameraEntity.getEyePosition(), ominousVault.getCenter(), ominousColor);
-			}
+			//}
 		}
 
 		//end renderer
