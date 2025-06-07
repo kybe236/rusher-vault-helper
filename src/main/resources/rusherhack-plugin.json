@@ -1,0 +1,17 @@
+{
+  "Plugin-Class": "de.kybe.vault.Main",
+  "Name": "${project.plugin_name}",
+  "Version": "${project.plugin_version}",
+  "Description": "Vault Helper",
+  "URL": "",
+  "Authors": [
+    "kybe236"
+  ],
+  "Minecraft-Versions": [
+    "${project.minecraft_version}",
+    "1.21.1",
+    "1.21.2",
+    "1.21.4",
+    "1.21.5"
+  ]
+}
